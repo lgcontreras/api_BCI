@@ -3,10 +3,12 @@ package org.example.bci_api.model;
 import javax.persistence.*;
 import lombok.Data;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 import java.util.List;
 
 @Entity
+@Table(name = "users")
 @Data
 public class User {
     @Id
@@ -24,5 +26,5 @@ public class User {
     @JoinColumn(name = "user_id")
     private List<Phone> phones;
 
-    private String created;
+    private LocalDateTime created;
 }
